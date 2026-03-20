@@ -10,20 +10,15 @@ const form = useForm({
     lugar: props.localizacion.lugar
 })
 
-// Función para actualizar
 const submit = () => {
     form.put(`/localizaciones/${props.localizacion.id}`)
 }
 
-// Función para el botón cancelar (Corregido)
 const cancelar = () => {
     Inertia.get('/localizaciones')
 }
 
-// Función para cerrar sesión (Corregido)
 const desloguear = () => {
-    // Si usas Ziggy (route), asegúrate de que esté disponible
-    // Si no, puedes usar la URL directa: Inertia.post('/logout')
     Inertia.post(route('logout'))
 }
 </script>
